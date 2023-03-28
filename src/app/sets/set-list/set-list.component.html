@@ -1,1 +1,4 @@
-<p>set-list works!</p>
+<h1>My Sets</h1>
+<div class="view-sets">
+    <app-set-item *ngFor="let setEl of sets; let i = index" [set]="setEl" [index]="i"></app-set-item>
+</div>

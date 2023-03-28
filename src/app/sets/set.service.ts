@@ -2,154 +2,65 @@ import { Subject } from "rxjs";
 import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-// import { Document } from "./document.model";
+import { Set } from "./sets.model";
+import { MOCKSETS } from "./MOCKSETS";
 
 @Injectable({
     providedIn: 'root'
 })
 
 export class setService {
-    // documentSelectedEvent = new EventEmitter<Document>();
-    // documentChangedEvent = new EventEmitter<Document[]>();
-    // documentListChangedEvent = new Subject<Document[]>();
+    setSelectedEvent = new EventEmitter<Set>();
+    setChangedEvent = new EventEmitter<Set[]>();
+    setListChangedEvent = new EventEmitter<Set[]>();
 
-    // private documents: Document[] = [];
-    // private maxDocumentId: number;
+    // private sets: Set[] = [];
+    private sets: Set[] = MOCKSETS;
+    private maxSetId: number;
 
-    // constructor(private http: HttpClient) {
-    //     this.fetchDocuments();
-    // }
+    constructor(private http: HttpClient) {
+        // this.fetchSets();
+    }
 
-    // fetchDocuments() {
-    //     return this.http
-    //         .get<Document[]>(
-    //             "http://localhost:3000/documents"
-    //         )
-    //         .subscribe((result: any) => {
-    //             let documents = result.documents;
-    //             this.documents = documents;
-    //             // console.log(documents);
-    //             this.maxDocumentId = this.getMaxId();
-    //             documents = documents.sort((a, b) => {
-    //                 if (a.id > b.id) {
-    //                     return 1;
-    //                 } else {
-    //                     return -1;
-    //                 }
-    //             })
-    //             let documentsListClone = this.documents.slice();
-    //             this.documentListChangedEvent.next(documentsListClone);
-    //             (error: any) => {
-    //                 console.log(error);
-    //             }
-    //         })
-    // }
+    getSets() {
+        return this.sets.slice();
+    }
 
-    // storeDocuments(document: Document) {
-    //     if (!document) {
-    //         return;
-    //     }
+    getSet(id: string) {
+        return this.sets[id];
+    }
 
-    //     // make sure id of the new Document is empty
-    //     document.id = '';
+    getMaxId(): number {
+        let maxId = 0;
+        for (let set of this.sets) {
+            let currentId = parseInt(set.id);
+            if (currentId > maxId) {
+                maxId = currentId;
+            }
+        }
+        return maxId;
+    }
 
-    //     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    addSet(newSet: Set) {
+        if (!newSet) {
+            return;
+        }
+        this.maxSetId++;
+        newSet.id = this.maxSetId.toString();
+        this.sets.push(newSet);
+        // this.storeSets(newSet);
+    }
 
-    //     // add to database
-    //     this.http.post<{ message: string, document: Document }>('http://localhost:3000/documents',
-    //         document,
-    //         { headers: headers })
-    //         .subscribe(
-    //             (responseData) => {
-    //                 // add new document to documents
-    //                 this.documents.push(responseData.document);
-    //                 this.sortAndSend();
-    //             }
-    //         );
-    // }
+    sortAndSend() {
+        // this.fetchSets();
+    }
 
-    // getDocuments() {
-    //     return this.documents.slice();
-    // }
+    // fetchSets function will go here
 
-    // getDocument(id: string) {
-    //     return this.documents[id];
-    // }
+    // storeSets function will go here
 
-    // getMaxId(): number {
-    //     let maxId = 0;
-    //     for (let document of this.documents) {
-    //         let currentId = parseInt(document.id);
-    //         if (currentId > maxId) {
-    //             maxId = currentId;
-    //         }
-    //     }
-    //     return maxId;
-    // }
+    // updateSet function will go here
 
-
-    // addDocument(newDocument: Document) {
-    //     if (!newDocument) {
-    //         return;
-    //     }
-    //     this.maxDocumentId++;
-    //     newDocument.id = this.maxDocumentId.toString();
-    //     this.documents.push(newDocument);
-    //     this.storeDocuments(newDocument);
-    // }
-
-    // updateDocument(originalDocument: Document, newDocument: Document) {
-    //     if (!originalDocument || !newDocument) {
-    //         return;
-    //     }
-
-    //     const pos = this.documents.findIndex(d => d.id === originalDocument.id);
-
-    //     if (pos < 0) {
-    //         return;
-    //     }
-
-    //     // set the id of the new Document to the id of the old Document
-    //     newDocument.id = originalDocument.id;
-    //     newDocument._id = originalDocument._id;
-
-    //     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-    //     // update database
-    //     this.http.put('http://localhost:3000/documents/' + originalDocument.id,
-    //         newDocument, { headers: headers })
-    //         .subscribe(
-    //             (response: Response) => {
-    //                 this.documents[pos] = newDocument;
-    //                 this.sortAndSend();
-    //             }
-    //         );
-    // }
-
-
-    // deleteDocument(document: Document) {
-    //     if (!document) {
-    //         return;
-    //     }
-
-    //     const pos = this.documents.findIndex(d => d.id === document.id);
-
-    //     if (pos < 0) {
-    //         return;
-    //     }
-
-    //     // delete from database
-    //     this.http.delete('http://localhost:3000/documents/' + document.id)
-    //         .subscribe(
-    //             (response: Response) => {
-    //                 this.documents = this.documents.splice(pos, 1);
-    //                 this.sortAndSend();
-    //             }
-    //         );
-    // }
-
-    // sortAndSend() {
-    //     this.fetchDocuments();
-    // }
+    // deleteSet function will go here
 
 }

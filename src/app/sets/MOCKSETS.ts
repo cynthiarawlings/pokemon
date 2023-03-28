@@ -2,7 +2,7 @@ import { Set } from './sets.model';
 
 export const MOCKSETS: Set[] = [
   {
-    id: "1",
+    id: "0",
     name: "Grass",
     pokemon: [
       {
@@ -26,7 +26,7 @@ export const MOCKSETS: Set[] = [
     ]
   },
   {
-    id: "2",
+    id: "1",
     name: "Fire",
     pokemon: [
       {
@@ -50,7 +50,7 @@ export const MOCKSETS: Set[] = [
     ]
   },
   {
-    id: "3",
+    id: "2",
     name: "Water",
     pokemon: [
       {

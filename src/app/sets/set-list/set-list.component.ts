@@ -12,6 +12,7 @@ import { setService } from '../set.service';
   styleUrls: ['./set-list.component.css']
 })
 export class SetListComponent {
+  // sets: Set[] = [];
   sets: Set[] = MOCKSETS;
   private subscription: Subscription;
 
@@ -21,6 +22,17 @@ export class SetListComponent {
 
   ngOnInit() {
     console.log(this.sets);
+    this.sets = this.setService.getSets();
+    this.setService.setChangedEvent.subscribe(
+      (sets: Set[]) => {
+        this.sets = sets;
+      }
+    );
+    this.subscription = this.setService.setListChangedEvent.subscribe(
+      (setsList: Set[]) => {
+        this.sets = setsList;
+      }
+    );
   }
 
 }
