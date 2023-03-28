@@ -7,11 +7,10 @@ import { SetDetailComponent } from './sets/set-detail/set-detail.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/sets", pathMatch: "full" },
-  { path: "sets", component: SetsComponent, children: [
-      { path: "new", component: SetEditComponent },
-      { path: ":id", component: SetDetailComponent },
-      { path: ":id/edit", component: SetEditComponent }
-  ] }
+  { path: "sets", component: SetsComponent },
+  { path: "new", component: SetsComponent },
+  { path: "sets/:id", component: SetDetailComponent },
+  { path: "sets/:id/edit", component: SetEditComponent }
 ];
 
 @NgModule({

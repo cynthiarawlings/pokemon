@@ -56,11 +56,23 @@ export class setService {
     }
 
     // fetchSets function will go here
+    fetchSets() {
+
+    }
 
     // storeSets function will go here
+    storeSets(set: Set) {
+
+    }
 
     // updateSet function will go here
+    updateSet(originalSet: Set, newSet: Set) {
+
+    }
 
     // deleteSet function will go here
+    deleteSet(set: Set) {
+
+    }
 
 }
