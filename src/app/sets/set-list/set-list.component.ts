@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { Subscription } from "rxjs";
+
+import { Set } from '../sets.model';
+import { MOCKSETS } from '../MOCKSETS';
+import { setService } from '../set.service';
+// import { Pokemon } from '../pokemon.model';
 
 @Component({
   selector: 'app-set-list',
@@ -6,5 +12,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./set-list.component.css']
 })
 export class SetListComponent {
+  sets: Set[] = MOCKSETS;
+  private subscription: Subscription;
+
+  constructor(private setService: setService) {
+
+  }
+
+  ngOnInit() {
+    console.log(this.sets);
+  }
 
 }
