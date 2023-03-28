@@ -1,0 +1,30 @@
+h1 {
+    color: #F23005;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.view-sets {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+@media only screen and (min-width: 500px) {
+    .view-sets {
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .view-sets {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .view-sets {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
