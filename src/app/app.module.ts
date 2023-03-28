@@ -10,6 +10,7 @@ import { SetDetailComponent } from './sets/set-detail/set-detail.component';
 import { SetEditComponent } from './sets/set-edit/set-edit.component';
 import { SetListComponent } from './sets/set-list/set-list.component';
 import { SetItemComponent } from './sets/set-item/set-item.component';
+import { PokemonDetailComponent } from './sets/pokemon-detail/pokemon-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SetItemComponent } from './sets/set-item/set-item.component';
     SetDetailComponent,
     SetEditComponent,
     SetListComponent,
-    SetItemComponent
+    SetItemComponent,
+    PokemonDetailComponent
   ],
   imports: [
     BrowserModule,
