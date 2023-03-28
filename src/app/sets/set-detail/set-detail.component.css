@@ -1,0 +1,56 @@
+h1 {
+    text-align: center;
+    color: #F23005;
+}
+
+.arrow {
+    width: 3rem;
+}
+
+.arrow svg {
+    fill: #F23005;
+}
+
+.arrow {
+    transition: all 0.3s ease-in-out;
+}
+
+.arrow:hover {
+    transform: scale(1.5);
+}
+
+.arrow:active svg {
+    fill: #F2B705;
+}
+
+.bottom-nav {
+    display: flex;
+    max-width: 20rem;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.editButton {
+    border: 2px solid #F23005;
+    background: transparent;
+    color: #F23005;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.editButton:hover {
+    border: 2px solid #F23005;
+    background-color: #F23005;
+    color: white;
+}
+
+.editButton:active {
+    border: 2px solid #F2B705;
+    background: transparent;
+    color: #F2B705;
+}

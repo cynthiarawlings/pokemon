@@ -1,0 +1,249 @@
+.flash-card {
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    max-width: 30rem;
+    height: 30rem;
+    perspective: 1000px;
+}
+
+.flash-card h2 {
+    margin: 0;
+    padding: 1rem;
+}
+
+.flash-card img {
+    width: 100%;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flash-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: white;
+    border: 2px solid #F23005;
+    border-radius: 10px;
+}
+
+.card-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #F23005;
+    border-radius: 10px;
+    transform: rotateY(180deg);
+}
+
+.card-back h2 {
+    font-size: 3rem;
+    color: white;
+}
+
+/* Normal */
+.normal .card-front {
+    border: 2px solid #9b9f6c;
+}
+
+.normal .card-back {
+    background-color: #9b9f6c;
+    border: 2px solid #9b9f6c;
+}
+
+/* Fire */
+.fire .card-front {
+    border: 2px solid #e4732f;
+}
+
+.fire .card-back {
+    background-color: #e4732f;
+    border: 2px solid #e4732f;
+}
+
+/* Water */
+.water .card-front {
+    border: 2px solid #6b7def;
+}
+
+.water .card-back {
+    background-color: #6b7def;
+    border: 2px solid #6b7def;
+}
+
+/* Grass */
+.grass .card-front {
+    border: 2px solid #6fc840;
+}
+
+.grass .card-back {
+    background-color: #6fc840;
+    border: 2px solid #6fc840;
+}
+
+/* Electric */
+.electric .card-front {
+    border: 2px solid #efce26;
+}
+
+.electric .card-back {
+    background-color: #efce26;
+    border: 2px solid #efce26;
+}
+
+/* Ice */
+.ice .card-front {
+    border: 2px solid #94d4d2;
+}
+
+.ice .card-back {
+    background-color: #94d4d2;
+    border: 2px solid #94d4d2;
+}
+
+/* Fighting */
+.fighting .card-front {
+    border: 2px solid #b01f29;
+}
+
+.fighting .card-back {
+    background-color: #b01f29;
+    border: 2px solid #b01f29;
+}
+
+/* Poison */
+.poison .card-front {
+    border: 2px solid #b01f29;
+}
+
+.poison .card-back {
+    background-color: #942698;
+    border: 2px solid #942698;
+}
+
+/* Ground */
+.ground .card-front {
+    border: 2px solid #d6bb5c;
+}
+
+.ground .card-back {
+    background-color: #d6bb5c;
+    border: 2px solid #d6bb5c;
+}
+
+/* Flying */
+.flying .card-front {
+    border: 2px solid #a27bef;
+}
+
+.flying .card-back {
+    background-color: #a27bef;
+    border: 2px solid #a27bef;
+}
+
+/* Psychic */
+.psychic .card-front {
+    border: 2px solid #ee3f80;
+}
+
+.psychic .card-back {
+    background-color: #ee3f80;
+    border: 2px solid #ee3f80;
+}
+
+/* Psychic */
+.psychic .card-front {
+    border: 2px solid #ee3f80;
+}
+
+.psychic .card-back {
+    background-color: #ee3f80;
+    border: 2px solid #ee3f80;
+}
+
+/* Bug */
+.bug .card-front {
+    border: 2px solid #9bb513;
+}
+
+.bug .card-back {
+    background-color: #9bb513;
+    border: 2px solid #9bb513;
+}
+
+/* Rock */
+.rock .card-front {
+    border: 2px solid #aa992f;
+}
+
+.rock .card-back {
+    background-color: #aa992f;
+    border: 2px solid #aa992f;
+}
+
+/* Ghost */
+.ghost .card-front {
+    border: 2px solid #67478e;
+}
+
+.ghost .card-back {
+    background-color: #67478e;
+    border: 2px solid #67478e;
+}
+
+/* Dark */
+.dark .card-front {
+    border: 2px solid #624e3f;
+}
+
+.dark .card-back {
+    background-color: #624e3f;
+    border: 2px solid #624e3f;
+}
+
+/* Dragon */
+.dragon .card-front {
+    border: 2px solid #6743ef;
+}
+
+.dragon .card-back {
+    background-color: #6743ef;
+    border: 2px solid #6743ef;
+}
+
+/* Steel */
+.steel .card-front {
+    border: 2px solid #b1adca;
+}
+
+.steel .card-back {
+    background-color: #b1adca;
+    border: 2px solid #b1adca;
+}
+
+/* Fairy */
+.fairy .card-front {
+    border: 2px solid #e9aab5;
+}
+
+.fairy .card-back {
+    background-color: #e9aab5;
+    border: 2px solid #e9aab5;
+}

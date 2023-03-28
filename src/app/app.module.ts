@@ -11,6 +11,7 @@ import { SetEditComponent } from './sets/set-edit/set-edit.component';
 import { SetListComponent } from './sets/set-list/set-list.component';
 import { SetItemComponent } from './sets/set-item/set-item.component';
 import { PokemonDetailComponent } from './sets/pokemon-detail/pokemon-detail.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PokemonDetailComponent } from './sets/pokemon-detail/pokemon-detail.com
     SetEditComponent,
     SetListComponent,
     SetItemComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,28 @@
+div {
+    padding: 2rem;
+    background-color: #021E73;
+    color: white;
+    margin-top: 2rem;
+}
+
+div a {
+    color: white;
+}
+
+div p {
+    margin: 0;
+}
+
+@media only screen and (min-width: 900px) {
+    div {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    div {
+        padding-left: 20rem;
+        padding-right: 20rem;
+    }
+}

@@ -53,12 +53,12 @@ export const MOCKSETS: Set[] = [
         url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"
       },
       {
-        name: "Charmeleon",
+        name: "Wartortle",
         type: "water",
         url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png"
       },
       {
-        name: "Charizard",
+        name: "Blastoise",
         type: "water",
         url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png"
       }
