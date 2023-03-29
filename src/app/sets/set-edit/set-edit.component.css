@@ -108,3 +108,28 @@ select {
     margin-left: 2rem;
     margin-right: 2rem;
 }
+
+@media only screen and (min-width: 500px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+        margin: 2rem;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .max-width {
+        width: 60rem;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

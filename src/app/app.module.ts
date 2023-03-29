@@ -14,6 +14,7 @@ import { SetItemComponent } from './sets/set-item/set-item.component';
 import { PokemonDetailComponent } from './sets/pokemon-detail/pokemon-detail.component';
 import { FooterComponent } from './footer/footer.component';
 import { PokemonItemComponent } from './sets/pokemon-item/pokemon-item.component';
+import { PokemonResultComponent } from './sets/pokemon-result/pokemon-result.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PokemonItemComponent } from './sets/pokemon-item/pokemon-item.component
     SetItemComponent,
     PokemonDetailComponent,
     FooterComponent,
-    PokemonItemComponent
+    PokemonItemComponent,
+    PokemonResultComponent
   ],
   imports: [
     BrowserModule,

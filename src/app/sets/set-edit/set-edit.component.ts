@@ -17,6 +17,8 @@ export class SetEditComponent {
   originalSet: Set;
   set: Set;
   editMode: boolean = false;
+  pokemonResults: Pokemon[] = [];
+
   subscription: Subscription;
 
   constructor(private route: ActivatedRoute, private setService: setService, private router: Router) {
@@ -63,7 +65,7 @@ export class SetEditComponent {
   onSearch(form: NgForm) {
     document.getElementById("search-info").textContent = "Loading, please wait...";
     const value = form.value;
-    let pokemonResults: Pokemon[] = [];
+    this.pokemonResults = [];
     // Search by Type
     let typeFilteredPokemon = [];
     let searchUrl = "//pokeapi.co/api/v2/type/" + value.searchType;
@@ -80,13 +82,14 @@ export class SetEditComponent {
             .then((response) => response.json())
             .then((info) => {
               let name = info.name;
+              name = name.charAt().toUpperCase() + name.substring(1);
               let type = info.types[0].type.name;
               let url = info.sprites.other["official-artwork"].front_default;
               let pokemon = new Pokemon(name, type, url);
-              pokemonResults.push(pokemon);
+              this.pokemonResults.push(pokemon);
             });
         }
-        console.log(pokemonResults);
+        console.log(this.pokemonResults);
         document.getElementById("search-info").textContent = "";
       });
 
