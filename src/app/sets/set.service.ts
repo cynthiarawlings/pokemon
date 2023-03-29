@@ -64,7 +64,6 @@ export class setService {
 
     }
 
-    // updateSet function will go here
     updateSet(newSet: Set) {
         let newSets: Set[] = [];
         let setId = newSet.id;
@@ -83,8 +82,17 @@ export class setService {
     }
 
     // deleteSet function will go here
-    deleteSet(set: Set) {
-
+    deleteSet(id: string) {
+        let newSets: Set[] = [];
+        let setId = id;
+        for (let set of this.sets) {
+            if (set.id != setId) {
+                newSets.push(set);
+            }
+        }
+        this.sets = newSets;
+        console.log(this.sets);
+        // Connect to DB
     }
 
 }

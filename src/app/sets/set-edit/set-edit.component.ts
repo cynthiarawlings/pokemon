@@ -77,8 +77,10 @@ export class SetEditComponent {
     this.router.navigate(['/sets']);
   }
 
-  onDeleteSet(set: Set) {
-    console.log(set);
+  onDeleteSet(id: string) {
+    // console.log(set);
+    this.setService.deleteSet(id);
+    this.router.navigate(['/sets']);
   }
 
   onSearch(form: NgForm) {

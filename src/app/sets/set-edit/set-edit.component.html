@@ -11,7 +11,7 @@
         <button class="save-btn" type="submit" [disabled]="!f.valid">Save Set</button>
     </div>
     <div class="input-container max-width">
-        <button (click)="onDeleteSet(editingSet)" class="del-btn" type="button" [disabled]="!f.valid">Delete Set</button>
+        <button (click)="onDeleteSet(editingSet?.id)" class="del-btn" type="button" [disabled]="!f.valid">Delete Set</button>
     </div>
 </form>
 
