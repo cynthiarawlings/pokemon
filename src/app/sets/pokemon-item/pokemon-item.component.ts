@@ -9,8 +9,4 @@ import { Pokemon } from '../pokemon.model';
 export class PokemonItemComponent {
   @Input() pokemon: Pokemon;
   @Input() index: number;
-
-  onRemove(pokemon: Pokemon) {
-    console.log(pokemon);
-  }
 }

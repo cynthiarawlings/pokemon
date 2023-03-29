@@ -1,16 +1,17 @@
 <form id="set-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
-    <div class="input-container max-width">
-        <input class="name-input" type="text" id="name" name="name" [ngModel]=set?.name required #name
+    <div class="input-container max-width name-input-container">
+        <input class="name-input" type="text" id="name" name="name" [ngModel]=editingSet?.name required #name
             placeholder="Name your Set">
     </div>
-    <div class="grid-container">
-        <app-pokemon-item *ngFor="let pokemon of set.pokemon; let i = index" [pokemon]="pokemon" [index]="i"></app-pokemon-item>
+    <div class="grid-container" *ngIf="editingSet?.pokemon;">
+        <app-pokemon-item (click)="removePokemon(pokemon)" *ngFor="let pokemon of editingSet.pokemon; let i = index" [pokemon]="pokemon"
+            [index]="i"></app-pokemon-item>
     </div>
     <div class="input-container max-width">
         <button class="save-btn" type="submit" [disabled]="!f.valid">Save Set</button>
     </div>
     <div class="input-container max-width">
-        <button (click)="onDeleteSet(set)" class="del-btn" type="button" [disabled]="!f.valid">Delete Set</button>
+        <button (click)="onDeleteSet(editingSet)" class="del-btn" type="button" [disabled]="!f.valid">Delete Set</button>
     </div>
 </form>
 
@@ -48,7 +49,7 @@
 <div class="results">
     <p id="search-info"></p>
     <div class="search-results grid-container" *ngIf="pokemonResults.length > 1;">
-        <app-pokemon-result *ngFor="let pokemon of pokemonResults; let i = index" [pokemon]="pokemon" [index]="i"></app-pokemon-result>
+        <app-pokemon-result (click)="addPokemon(pokemon)" *ngFor="let pokemon of pokemonResults; let i = index"
+            [pokemon]="pokemon" [index]="i"></app-pokemon-result>
     </div>
 </div>
-

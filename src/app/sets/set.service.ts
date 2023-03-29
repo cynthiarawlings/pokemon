@@ -45,9 +45,8 @@ export class setService {
         if (!newSet) {
             return;
         }
-        this.maxSetId++;
-        newSet.id = this.maxSetId.toString();
         this.sets.push(newSet);
+        console.log(this.sets);
         // this.storeSets(newSet);
     }
 
@@ -66,8 +65,21 @@ export class setService {
     }
 
     // updateSet function will go here
-    updateSet(originalSet: Set, newSet: Set) {
-
+    updateSet(newSet: Set) {
+        let newSets: Set[] = [];
+        let setId = newSet.id;
+        for (let set of this.sets) {
+            if (set.id == setId) {
+                // console.log(newSets);
+                newSets.push(newSet);
+            }
+            else {
+                newSets.push(set);
+            }
+        }
+        this.sets = newSets;
+        console.log(this.sets);
+        // Connect to DB
     }
 
     // deleteSet function will go here

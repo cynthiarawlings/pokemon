@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Pokemon } from '../pokemon.model';
+import { Set } from '../sets.model';
 
 @Component({
   selector: 'app-pokemon-result',
@@ -9,9 +10,4 @@ import { Pokemon } from '../pokemon.model';
 export class PokemonResultComponent {
   @Input() pokemon: Pokemon;
   @Input() index: number;
-
-  onAdd(pokemon: Pokemon) {
-
-  }
-
 }

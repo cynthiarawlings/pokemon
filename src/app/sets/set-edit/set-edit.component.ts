@@ -18,6 +18,7 @@ export class SetEditComponent {
   set: Set;
   editMode: boolean = false;
   pokemonResults: Pokemon[] = [];
+  editingSet: Set;
 
   subscription: Subscription;
 
@@ -31,6 +32,7 @@ export class SetEditComponent {
         this.id = params["id"];
         if (!this.id) {
           this.editMode = false;
+          this.editingSet = new Set("0", "", []);
           return;
         }
         this.originalSet = this.setService.getSet(this.id);
@@ -39,23 +41,40 @@ export class SetEditComponent {
         }
         this.editMode = true;
         this.set = JSON.parse(JSON.stringify(this.originalSet));
+        this.editingSet = this.set;
       }
     );
   }
 
+  addPokemon(pokemon: Pokemon) {
+    this.editingSet.pokemon.push(pokemon);
+    // console.log(this.editingSet);
+  }
+
+  removePokemon(pokemon: Pokemon) {
+    let newArray = this.editingSet.pokemon;
+
+    const index = newArray.indexOf(pokemon);
+    if (index > -1) {
+      newArray.splice(index, 1);
+    }
+
+    // console.log(newArray);
+  }
+
   onSubmit(form: NgForm) {
     const value = form.value;
-    console.log(value);
-    // const value = form.value;
-    // let newSetPokemonNames = value.newSetPokemonNames;
-    // const newSet = new Set(value.id, value.name, value.pokemon);
-    // if (this.editMode) {
-    //   this.setService.updateSet(this.originalSet, newSet);
-    // }
-    // else {
-    //   this.setService.addSet(newSet);
-    // }
-    // this.router.navigate(['/sets']);
+    if (this.editMode) {
+      let newSet = new Set(this.editingSet.id, value.name, this.editingSet.pokemon);
+      this.setService.updateSet(newSet);
+    }
+    else {
+      let newId = this.setService.getMaxId();
+      newId = newId + 1;
+      let newSet = new Set(newId.toString(), value.name, this.editingSet.pokemon);
+      this.setService.addSet(newSet);
+    }
+    this.router.navigate(['/sets']);
   }
 
   onDeleteSet(set: Set) {
@@ -89,7 +108,7 @@ export class SetEditComponent {
               this.pokemonResults.push(pokemon);
             });
         }
-        console.log(this.pokemonResults);
+        // console.log(this.pokemonResults);
         document.getElementById("search-info").textContent = "";
       });
 

@@ -167,7 +167,7 @@ svg:active {
     fill: #e9aab5;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 620px) {
     .thumbnail-container {
         margin: 0;
     }
