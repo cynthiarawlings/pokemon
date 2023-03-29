@@ -15,9 +15,6 @@
 
 <form id="search" (ngSubmit)="onSearch(s)" #s="ngForm">
     <div class="filter-container">
-        <div class="input-container">
-            <input class="search-name" type="text" id="searchName" name="searchName" ngModel #searchName placeholder="Search by Name">
-        </div>
         <label class="search-label" for="type">Search by Type</label>
         <select id="searchType" name="searchType" #searchType ngModel="normal">
             <option value="normal">Normal</option>
@@ -44,3 +41,11 @@
         </div>
     </div>
 </form>
+
+<div class="results">
+    <p id="search-info"></p>
+    <div id="search-results">
+
+    </div>
+</div>
+

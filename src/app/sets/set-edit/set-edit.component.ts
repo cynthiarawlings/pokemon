@@ -61,47 +61,35 @@ export class SetEditComponent {
   }
 
   onSearch(form: NgForm) {
+    document.getElementById("search-info").textContent = "Loading, please wait...";
     const value = form.value;
     let pokemonResults: Pokemon[] = [];
-    if (value.searchName != "") {
-      // Search by name
-      let searchUrl = "https://pokeapi.co/api/v2/pokemon/" + value.searchName.toLowerCase();
-      fetch(searchUrl)
-        .then((response) => response.json())
-        .then((info) => {
-          let name = info.name;
-          let type = info.types[0].type.name;
-          let url = info.sprites.other["official-artwork"].front_default;
-          let pokemon = new Pokemon(name, type, url);
-          pokemonResults.push(pokemon);
-        });
-    }
-    else {
-      // Search by Type
-      let typeFilteredPokemon = [];
-      let searchUrl = "//pokeapi.co/api/v2/type/" + value.searchType;
-      fetch(searchUrl)
-        .then((response) => response.json())
-        .then((info) => {
-          for (let i = 0, len = info.pokemon.length; i < len; i++) {
-            let typePokemon = info.pokemon[i].pokemon.name;
-            typeFilteredPokemon.push(typePokemon);
-          }
-          for (let i = 0, len = typeFilteredPokemon.length; i < len; i++) {
-            let searchUrl = "https://pokeapi.co/api/v2/pokemon/" + typeFilteredPokemon[i];
-            fetch(searchUrl)
-              .then((response) => response.json())
-              .then((info) => {
-                let name = info.name;
-                let type = info.types[0].type.name;
-                let url = info.sprites.other["official-artwork"].front_default;
-                let pokemon = new Pokemon(name, type, url);
-                pokemonResults.push(pokemon);
-              });
-          }
-        });
-    }
-    console.log(pokemonResults);
+    // Search by Type
+    let typeFilteredPokemon = [];
+    let searchUrl = "//pokeapi.co/api/v2/type/" + value.searchType;
+    fetch(searchUrl)
+      .then((response) => response.json())
+      .then((info) => {
+        for (let i = 0, len = info.pokemon.length; i < len; i++) {
+          let typePokemon = info.pokemon[i].pokemon.name;
+          typeFilteredPokemon.push(typePokemon);
+        }
+        for (let i = 0, len = typeFilteredPokemon.length; i < len; i++) {
+          let searchUrl = "https://pokeapi.co/api/v2/pokemon/" + typeFilteredPokemon[i];
+          fetch(searchUrl)
+            .then((response) => response.json())
+            .then((info) => {
+              let name = info.name;
+              let type = info.types[0].type.name;
+              let url = info.sprites.other["official-artwork"].front_default;
+              let pokemon = new Pokemon(name, type, url);
+              pokemonResults.push(pokemon);
+            });
+        }
+        console.log(pokemonResults);
+        document.getElementById("search-info").textContent = "";
+      });
+
   }
 
 }

@@ -62,19 +62,8 @@
     background-color: #F2B705;
 }
 
-.search-name {
-    width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    border: 2px solid black;
-    border-radius: 4rem;
-    color: black;
-    padding-left: 2rem;
-}
-
 label {
-    margin: 0.75rem;
+    margin-top: 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
     font-size: 1.5rem;
@@ -112,4 +101,10 @@ select {
     padding-bottom: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.results p {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
