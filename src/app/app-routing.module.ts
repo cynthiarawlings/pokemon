@@ -8,7 +8,7 @@ import { SetDetailComponent } from './sets/set-detail/set-detail.component';
 const routes: Routes = [
   { path: "", redirectTo: "/sets", pathMatch: "full" },
   { path: "sets", component: SetsComponent },
-  { path: "new", component: SetsComponent },
+  { path: "new", component: SetEditComponent },
   { path: "sets/:id", component: SetDetailComponent },
   { path: "sets/:id/edit", component: SetEditComponent }
 ];

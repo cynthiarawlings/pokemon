@@ -1,1 +1,21 @@
-<p>set-edit works!</p>
+<form id="set-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="input-container">
+        <input 
+        class="name-input"
+        type="text" 
+        id="name" 
+        name="name"
+        [ngModel]=set?.name
+        required
+        #name
+        placeholder="Name your Set"
+        >
+    </div>
+    <app-pokemon-item *ngFor="let pokemon of set.pokemon; let i = index" [pokemon]="pokemon" [index]="i"></app-pokemon-item>
+    <div class="input-container">
+        <button class="save-btn" type="submit" [disabled]="!f.valid">Save Set</button>
+    </div>
+    <div class="input-container">
+        <button (click)="onDeleteSet(set)" class="del-btn" type="button" [disabled]="!f.valid">Delete Set</button>
+    </div>
+</form>

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SetsComponent } from './sets/sets.component';
@@ -12,6 +13,7 @@ import { SetListComponent } from './sets/set-list/set-list.component';
 import { SetItemComponent } from './sets/set-item/set-item.component';
 import { PokemonDetailComponent } from './sets/pokemon-detail/pokemon-detail.component';
 import { FooterComponent } from './footer/footer.component';
+import { PokemonItemComponent } from './sets/pokemon-item/pokemon-item.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,15 @@ import { FooterComponent } from './footer/footer.component';
     SetListComponent,
     SetItemComponent,
     PokemonDetailComponent,
-    FooterComponent
+    FooterComponent,
+    PokemonItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,58 @@
+.input-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.name-input {
+    width: 100%;
+    margin-top: 2rem;
+    border: 2px solid #021E73;
+    padding: 1rem;
+    padding-left: 2rem;
+    font-size: 3rem;
+    color: #021E73;
+    border-radius: 4rem;
+}
+
+.save-btn {
+    width: 100%;
+    border: 2px solid #021E73;
+    padding: 1rem;
+    font-size: 2rem;
+    color: #021E73;
+    border-radius: 4rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.save-btn:hover {
+    border: 2px solid white;
+    color: white;
+    background-color: #021E73;
+}
+
+.save-btn:active {
+    border: 2px solid #F2B705;
+    background-color: #F2B705;
+}
+
+.del-btn {
+    width: 100%;
+    border: 2px solid #F23005;
+    padding: 1rem;
+    font-size: 2rem;
+    color: #F23005;
+    border-radius: 4rem;
+    transition: all 0.3s ease-in-out;
+    margin-top: 2rem;
+}
+
+.del-btn:hover {
+    border: 2px solid white;
+    color: white;
+    background-color: #F23005;
+}
+
+.del-btn:active {
+    border: 2px solid #F2B705;
+    background-color: #F2B705;
+}

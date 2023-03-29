@@ -1,0 +1,168 @@
+.pokemon-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+}
+
+svg {
+    width: 4rem;
+    height: 4rem;
+    transition: all 0.3s ease-in-out;
+}
+
+svg:hover {
+    width: 4rem;
+    height: 4rem;
+    transform: scale(1.5);
+    fill: #F23005;
+}
+
+svg:active {
+    fill: #F2B705;
+}
+
+.arrow:hover {
+    transform: scale(1.5);
+}
+
+.pokemon-header h2 {
+    margin: 0;
+}
+
+.thumbnail-container img {
+    width: 100%;
+}
+
+.thumbnail-container {
+    border: 2px solid black;
+    margin: 2rem;
+}
+
+/* Normal */
+.normal {
+    color: #9b9f6c;
+    border: 2px solid #9b9f6c;
+    fill: #9b9f6c;
+}
+
+/* Fire */
+.fire {
+    color: #e4732f;
+    border: 2px solid #e4732f;
+    fill: #e4732f;
+}
+
+/* Water */
+.water {
+    color: #6b7def;
+    border: 2px solid #6b7def;
+    fill: #6b7def;
+}
+
+/* Grass */
+.grass {
+    color: #6fc840;
+    border: 2px solid #6fc840;
+    fill: #6fc840;
+}
+
+/* Electric */
+.electric {
+    color: #efce26;
+    border: 2px solid #efce26;
+    fill: #efce26;
+}
+
+/* Ice */
+.ice {
+    color: #94d4d2;
+    border: 2px solid #94d4d2;
+    fill: #94d4d2;
+}
+
+/* Fighting */
+.fighting {
+    color: #b01f29;
+    border: 2px solid #b01f29;
+    fill: #b01f29;
+}
+
+/* Poison */
+.poison {
+    color: #942698;
+    border: 2px solid #942698;
+    fill: #942698;
+}
+
+/* Ground */
+.ground {
+    color: #d6bb5c;
+    border: 2px solid #d6bb5c;
+    fill: #d6bb5c;
+}
+
+/* Flying */
+.flying {
+    color: #a27bef;
+    border: 2px solid #a27bef;
+    fill: #a27bef;
+}
+
+/* Psychic */
+.psychic {
+    color: #ee3f80;
+    border: 2px solid #ee3f80;
+    fill: #ee3f80;
+}
+
+/* Bug */
+.bug {
+    color: #9bb513;
+    border: 2px solid #9bb513;
+    fill: #9bb513;
+}
+
+/* Rock */
+.rock {
+    color: #aa992f;
+    border: 2px solid #aa992f;
+    fill: #aa992f;
+}
+
+/* Ghost */
+.ghost {
+    color: #67478e;
+    border: 2px solid #67478e;
+    fill: #67478e;
+}
+
+/* Dark */
+.dark {
+    color: #624e3f;
+    border: 2px solid #624e3f;
+    fill: #624e3f;
+}
+
+/* Dragon */
+.dragon {
+    color: #6743ef;
+    border: 2px solid #6743ef;
+    fill: #6743ef;
+}
+
+/* Steel */
+.steel {
+    color: #b1adca;
+    border: 2px solid #b1adca;
+    fill: #b1adca;
+}
+
+/* Fairy */
+.fairy {
+    color: #e9aab5;
+    border: 2px solid #e9aab5;
+    fill: #e9aab5;
+}
