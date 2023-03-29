@@ -21,7 +21,6 @@ export class SetListComponent {
   }
 
   ngOnInit() {
-    console.log(this.sets);
     this.sets = this.setService.getSets();
     this.setService.setChangedEvent.subscribe(
       (sets: Set[]) => {

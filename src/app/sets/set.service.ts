@@ -46,7 +46,6 @@ export class setService {
             return;
         }
         this.sets.push(newSet);
-        console.log(this.sets);
         // this.storeSets(newSet);
     }
 
@@ -69,7 +68,6 @@ export class setService {
         let setId = newSet.id;
         for (let set of this.sets) {
             if (set.id == setId) {
-                // console.log(newSets);
                 newSets.push(newSet);
             }
             else {
@@ -77,7 +75,6 @@ export class setService {
             }
         }
         this.sets = newSets;
-        console.log(this.sets);
         // Connect to DB
     }
 
@@ -91,7 +88,6 @@ export class setService {
             }
         }
         this.sets = newSets;
-        console.log(this.sets);
         // Connect to DB
     }
 

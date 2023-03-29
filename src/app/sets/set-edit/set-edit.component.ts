@@ -48,7 +48,6 @@ export class SetEditComponent {
 
   addPokemon(pokemon: Pokemon) {
     this.editingSet.pokemon.push(pokemon);
-    // console.log(this.editingSet);
   }
 
   removePokemon(pokemon: Pokemon) {
@@ -58,8 +57,6 @@ export class SetEditComponent {
     if (index > -1) {
       newArray.splice(index, 1);
     }
-
-    // console.log(newArray);
   }
 
   onSubmit(form: NgForm) {
@@ -78,7 +75,6 @@ export class SetEditComponent {
   }
 
   onDeleteSet(id: string) {
-    // console.log(set);
     this.setService.deleteSet(id);
     this.router.navigate(['/sets']);
   }
@@ -110,7 +106,6 @@ export class SetEditComponent {
               this.pokemonResults.push(pokemon);
             });
         }
-        // console.log(this.pokemonResults);
         document.getElementById("search-info").textContent = "";
       });
 
