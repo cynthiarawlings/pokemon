@@ -76,24 +76,30 @@ export class SetEditComponent {
           pokemonResults.push(pokemon);
         });
     }
-    else if (value.searchGen != "All") {
-      if (value.searchType != "All") {
-        // Search by gen and type
-      }
-      else {
-        // Search by Gen
-      }
-    }
     else {
       // Search by Type
-
-      // ************ 
-      // Left off here with the searching.
-      // Remember that the search results that are posted 
-      // to the page need to be caped at 10 or so, because there
-      // can be hundreds of results
-      // I might want to make a new component because the svg needs to be a +
-      // and the function needs to add, but mabye I can use a ng if or something.
+      let typeFilteredPokemon = [];
+      let searchUrl = "//pokeapi.co/api/v2/type/" + value.searchType;
+      fetch(searchUrl)
+        .then((response) => response.json())
+        .then((info) => {
+          for (let i = 0, len = info.pokemon.length; i < len; i++) {
+            let typePokemon = info.pokemon[i].pokemon.name;
+            typeFilteredPokemon.push(typePokemon);
+          }
+          for (let i = 0, len = typeFilteredPokemon.length; i < len; i++) {
+            let searchUrl = "https://pokeapi.co/api/v2/pokemon/" + typeFilteredPokemon[i];
+            fetch(searchUrl)
+              .then((response) => response.json())
+              .then((info) => {
+                let name = info.name;
+                let type = info.types[0].type.name;
+                let url = info.sprites.other["official-artwork"].front_default;
+                let pokemon = new Pokemon(name, type, url);
+                pokemonResults.push(pokemon);
+              });
+          }
+        });
     }
     console.log(pokemonResults);
   }

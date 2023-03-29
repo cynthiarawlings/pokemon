@@ -18,22 +18,8 @@
         <div class="input-container">
             <input class="search-name" type="text" id="searchName" name="searchName" ngModel #searchName placeholder="Search by Name">
         </div>
-        <label class="search-label" for="gen">Search by Generation</label>
-        <select id="searchGen" name="searchGen" #searchGen ngModel="All">
-            <option value="All">All</option>
-            <option value="generation-i">Generation I</option>
-            <option value="generation-ii">Generation II</option>
-            <option value="generation-iii">Generation III</option>
-            <option value="generation-iv">Generation IV</option>
-            <option value="generation-v">Generation V</option>
-            <option value="generation-vi">Generation VI</option>
-            <option value="generation-vii">Generation VII</option>
-            <option value="generation-viii">Generation VIII</option>
-            <option value="generation-ix">Generation IX</option>
-        </select>
         <label class="search-label" for="type">Search by Type</label>
-        <select id="searchType" name="searchType" #searchType ngModel="All">
-            <option value="All">All</option>
+        <select id="searchType" name="searchType" #searchType ngModel="normal">
             <option value="normal">Normal</option>
             <option value="fighting">Fighting</option>
             <option value="flying">Flying</option>
@@ -52,8 +38,6 @@
             <option value="dragon">Dragon</option>
             <option value="dark">Dark</option>
             <option value="fairy">Fairy</option>
-            <option value="unknown">Unknown</option>
-            <option value="shadow">Shadow</option>
         </select>
         <div class="input-container">
             <button class="search-btn" type="submit" [disabled]="!s.valid">Search</button>
