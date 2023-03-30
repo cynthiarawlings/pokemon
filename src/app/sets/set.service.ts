@@ -3,7 +3,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Set } from "./sets.model";
-import { MOCKSETS } from "./MOCKSETS";
+// import { MOCKSETS } from "./MOCKSETS";
 
 @Injectable({
     providedIn: 'root'
@@ -14,12 +14,12 @@ export class setService {
     setChangedEvent = new EventEmitter<Set[]>();
     setListChangedEvent = new EventEmitter<Set[]>();
 
-    // private sets: Set[] = [];
-    private sets: Set[] = MOCKSETS;
-    private maxSetId: number;
+    private sets: Set[] = [];
+    // private sets: Set[] = MOCKSETS;
+    // private maxSetId: number;
 
     constructor(private http: HttpClient) {
-        // this.fetchSets();
+        this.fetchSets();
     }
 
     getSets() {
@@ -46,21 +46,44 @@ export class setService {
             return;
         }
         this.sets.push(newSet);
-        // this.storeSets(newSet);
+        this.storeSets(newSet);
     }
 
     sortAndSend() {
-        // this.fetchSets();
+        this.fetchSets();
     }
 
-    // fetchSets function will go here
     fetchSets() {
-
+        return this.http
+        .get<Set[]>(
+            "http://localhost:3000/api/sets"
+        )
+        .subscribe((result: any) => {
+            let sets = result.sets;
+            this.sets = sets;
+            // console.log(sets);
+            let setsListClone = this.sets.slice();
+            this.setListChangedEvent.next(setsListClone);
+            (error: any) => {
+                console.log(error);
+            }
+        })
     }
 
-    // storeSets function will go here
     storeSets(set: Set) {
+        if (!set) {
+            return;
+        }
 
+        const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+        this.http.post<{ message: string, set: Set }>("http://localhost:3000/api/sets", set, { headers: headers })
+            .subscribe(
+                (responseData) => {
+                    // this.sets.push(responseData.set);
+                    this.sortAndSend();
+                }
+            );
     }
 
     updateSet(newSet: Set) {
@@ -75,7 +98,16 @@ export class setService {
             }
         }
         this.sets = newSets;
-        // Connect to DB
+
+        const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+        this.http.put("http://localhost:3000/api/sets/" + setId, newSet, { headers: headers })
+            .subscribe(
+                (response: Response) => {
+                    // this.documents[pos] = newDocument;
+                    this.sortAndSend();
+                }
+            );
     }
 
     // deleteSet function will go here
@@ -88,7 +120,14 @@ export class setService {
             }
         }
         this.sets = newSets;
-        // Connect to DB
+        
+        this.http.delete("http://localhost:3000/api/sets/" + setId)
+            .subscribe(
+                (response: Response) => {
+                    // this.documents = this.documents.splice(pos, 1);
+                    this.sortAndSend();
+                }
+            );
     }
 
 }

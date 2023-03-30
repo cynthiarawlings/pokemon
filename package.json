@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "bootstrap": "^3.4.1",
+    "cookie-parser": "^1.4.6",
     "mongoose": "^7.0.3",
     "nodemon": "^2.0.22",
     "rxjs": "~7.8.0",
